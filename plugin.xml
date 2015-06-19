@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+	id="cordova-plugin-screen-orientation"
+	version="0.6.1">
+
+	<name>ScreenOrientation</name>
+	<description>Screen OrientationPlugin</description>
+	<license>EYC</license>
+	<keywords>orientation</keywords>
+
+	<js-module src="www/pg-plugin-screen-orientation.js">
+		<clobbers target="plugins.pg-plugin-screen-orientation" />
+	</js-module>
+
+
+	<!-- android -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="ScreenOrientation" >
+				<param name="android-package" value="com.eyc.plugins.ScreenOrientation"/>
+			</feature>
+		</config-file>
+
+		<source-file src="src/android/ScreenOrientation.java" target-dir="src/com/eyc/plugins/ScreenOrientation" />
+	</platform>
+</plugin>
